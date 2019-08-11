@@ -1,0 +1,17 @@
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\nunit.engine.netstandard.dll
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\CodeWars.Tests.deps.json
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\CodeWars.Tests.runtimeconfig.json
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\CodeWars.Tests.runtimeconfig.dev.json
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\CodeWars.Tests.dll
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\CodeWars.Tests.pdb
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\CodeWars.View.dll
+D:\CodeWars\CodeWars.Tests\bin\Debug\netcoreapp2.1\CodeWars.View.pdb
+D:\CodeWars\CodeWars.Tests\obj\Debug\netcoreapp2.1\CodeWars.Tests.csprojAssemblyReference.cache
+D:\CodeWars\CodeWars.Tests\obj\Debug\netcoreapp2.1\CodeWars.Tests.csproj.CoreCompileInputs.cache
+D:\CodeWars\CodeWars.Tests\obj\Debug\netcoreapp2.1\CodeWars.Tests.AssemblyInfoInputs.cache
+D:\CodeWars\CodeWars.Tests\obj\Debug\netcoreapp2.1\CodeWars.Tests.AssemblyInfo.cs
+D:\CodeWars\CodeWars.Tests\obj\Debug\netcoreapp2.1\CodeWars.Tests.csproj.CopyComplete
+D:\CodeWars\CodeWars.Tests\obj\Debug\netcoreapp2.1\CodeWars.Tests.dll
+D:\CodeWars\CodeWars.Tests\obj\Debug\netcoreapp2.1\CodeWars.Tests.pdb

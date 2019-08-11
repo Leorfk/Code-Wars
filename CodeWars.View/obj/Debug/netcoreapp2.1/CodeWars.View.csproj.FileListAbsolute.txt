@@ -1,0 +1,11 @@
+D:\CodeWars\CodeWars.View\bin\Debug\netcoreapp2.1\CodeWars.View.deps.json
+D:\CodeWars\CodeWars.View\bin\Debug\netcoreapp2.1\CodeWars.View.runtimeconfig.json
+D:\CodeWars\CodeWars.View\bin\Debug\netcoreapp2.1\CodeWars.View.runtimeconfig.dev.json
+D:\CodeWars\CodeWars.View\bin\Debug\netcoreapp2.1\CodeWars.View.dll
+D:\CodeWars\CodeWars.View\bin\Debug\netcoreapp2.1\CodeWars.View.pdb
+D:\CodeWars\CodeWars.View\obj\Debug\netcoreapp2.1\CodeWars.View.csprojAssemblyReference.cache
+D:\CodeWars\CodeWars.View\obj\Debug\netcoreapp2.1\CodeWars.View.csproj.CoreCompileInputs.cache
+D:\CodeWars\CodeWars.View\obj\Debug\netcoreapp2.1\CodeWars.View.AssemblyInfoInputs.cache
+D:\CodeWars\CodeWars.View\obj\Debug\netcoreapp2.1\CodeWars.View.AssemblyInfo.cs
+D:\CodeWars\CodeWars.View\obj\Debug\netcoreapp2.1\CodeWars.View.dll
+D:\CodeWars\CodeWars.View\obj\Debug\netcoreapp2.1\CodeWars.View.pdb
