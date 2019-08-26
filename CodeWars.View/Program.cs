@@ -6,8 +6,8 @@ namespace CodeWars.View
     {
         static void Main(string[] args)
         {
-            string s = "Hey wollef sroirraw";
-            Kata.SpinWords(s);
+            string l = "Hello";
+            Kata.Wave(l);
             Console.WriteLine("--------");
             Console.ReadLine();
         }

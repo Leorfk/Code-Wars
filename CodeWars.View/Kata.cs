@@ -46,7 +46,7 @@ namespace CodeWars.View
             {
                 for (int i = 0; i < n; i++)
                 {
-                    ovelhas += $"{i+1} sheep...";
+                    ovelhas += $"{i + 1} sheep...";
                 }
             }
             else
@@ -62,7 +62,7 @@ namespace CodeWars.View
             {
                 return true;
             }
-                return false;
+            return false;
         }
         public static int Opposite(int number)
         {
@@ -200,7 +200,7 @@ namespace CodeWars.View
         {
             string[] formatacao = sentence.Split(" ");
             string novaFrase = "";
-            for(int i = 0; i < formatacao.Length; i++)
+            for (int i = 0; i < formatacao.Length; i++)
             {
                 if (formatacao[i].Length >= 5)
                 {
@@ -209,11 +209,189 @@ namespace CodeWars.View
                 }
                 else
                 {
-                    novaFrase += formatacao[i] + " "; 
+                    novaFrase += formatacao[i] + " ";
                 }
             }
             return novaFrase.TrimEnd(' ');
         }
+        public static string Solve(string s)
+        {
+            int verificador = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (IsUpper(s[i].ToString()))
+                {
+                    verificador -= 1;
+                }
+                else
+                {
+                    verificador += 1;
+                }
+            }
+            if (verificador == 0 || verificador > 0)
+            {
+                return s.ToLower();
+            }
+            else
+            {
+                return s.ToUpper();
+            }
+
+        }
+        public static string BreakCamelCase(string str)
+        {
+            string separadas = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i].ToString() == str[i].ToString().ToUpper())
+                {
+                    separadas += " " + str[i];
+                }
+                else
+                {
+                    separadas += str[i];
+                }
+            }
+            Console.WriteLine(separadas);
+            return separadas;
+        }
+        public static int СenturyFromYear(int year)
+        {
+            if (year % 100 > 0)
+            {
+                return 1 + (year / 100);
+            }
+            return year / 100;
+        }
+        public static int[] UpArray(int[] num)
+        {
+            if (num == null || num[0] == 0)
+            {
+                throw new ArgumentException();
+            }
+            string numero = "";
+            for (int i = 0; i < num.Length; i++)
+            {
+                numero += num[i];
+            }
+            int numeroInteiro = 1 + int.Parse(numero);
+            string n = numeroInteiro.ToString();
+            int[] novoNumero = new int[n.Length];
+            for (int i = 0; i < n.Length; i++)
+            {
+                novoNumero[i] = int.Parse(n[i].ToString());
+                Console.WriteLine(novoNumero[i] + "---" + numeroInteiro.ToString()[i]);
+            }
+            return novoNumero;
+        }
+        public static string ReverseLetter(string str)
+        {
+            return new string(str.Reverse().ToArray());
+        }
+        public static string Disemvowel(string str)
+        {
+            return str.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", "").Replace("O", "");
+        }
+        public static bool ValidParentheses(string input)
+        {
+            if (input.Length == 0 || input[0] == ')' || input[input.Length - 1] == '(')
+            {
+                return false;
+            }
+            else if (input[0] == '(' && input[input.Length - 1] == ')')
+            {
+                int contador = 0;
+                foreach (char parentese in input)
+                {
+                    if (parentese == '(')
+                    {
+                        contador += 1;
+                    }
+                    if (parentese == ')')
+                    {
+                        contador -= 1;
+                    }
+                }
+                if (contador == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static int CountSmileys(string[] smileys)
+        {
+            return smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
+        }
+        public static String Accum(string s)
+        {
+            s = s.ToUpper();
+            string final = s[0].ToString();
+            for (int i = 0; i < s.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (j == 0)
+                    {
+                        final += "-" + s[i];
+                    }
+                    final += s[i].ToString().ToLower();
+                }
+            }
+            return final;
+        }
+        public static string PrinterError(String s)
+        {
+            int contador = 0;
+            Regex pattern = new Regex(@"[n-z]", RegexOptions.IgnoreCase);
+            foreach (char cor in s)
+            {
+                if (pattern.IsMatch(cor.ToString()))
+                {
+                    contador += 1;
+                }
+            }
+            return contador + "/" + s.Length;
+        }
+        public static string Likes(string[] name)
+        {
+            if (name.Length == 0)
+            {
+                return "no one likes this";
+            }
+            else if (name.Length == 1)
+            {
+                return $"{name[0]} likes this";
+            }
+            else if (name.Length == 2)
+            {
+                return $"{name[0]} and {name[1]} like this";
+            }
+            else if (name.Length == 3)
+            {
+                return $"{name[0]}, {name[1]} and {name[2]} like this";
+            }
+            else if (name.Length > 3)
+            {
+                return $"{name[0]}, {name[1]} and {name.Length - 2} others like this";
+            }
+            return "";
+        }
+        public static List<string> Wave(string str)
+        {
+            char letra = ' ';
+            StringBuilder sb = new StringBuilder(str);
+            List<string> boludo = new List<string>();
+            for (int i = 0; i < str.Length; i++)
+            {
+                letra = char.Parse(str[i].ToString().ToUpper());
+                boludo.Add(str.Replace(str[i], letra));
+            }
+            foreach (string palavra in boludo)
+            {
+                Console.WriteLine(palavra);
+            }
+            return boludo;
+        }
     }
 }
-

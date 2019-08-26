@@ -1,5 +1,7 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using CodeWars.View;
+using System.Collections.Generic;
+
 namespace Tests
 {
     public class Tests
@@ -94,7 +96,7 @@ namespace Tests
         {
             return Kata.DivisibleBy(numbers, divisor);
         }
-        private static object[] sampleTestCases = new object[]
+        private static readonly object[] sampleTestCases = new object[]
         {
               new object[] {"samurai", "ai", true},
               new object[] {"sumo", "omo", false},
@@ -154,11 +156,131 @@ namespace Tests
         {
             Assert.AreEqual("You are tsomla to the last test", Kata.SpinWords("You are almost to the last test"));
         }
+        [TestCase("code", "code")]
+        [TestCase("CODe", "CODE")]
+        [TestCase("COde", "code")]
+        [TestCase("Code", "code")]
+        public void BasicTests(string s, string expected)
+        {
+            Assert.That(Kata.Solve(s), Is.EqualTo(expected));
+        }
+        [Test]
+        public void Seculos()
+        {
+            Assert.AreEqual(18, Kata.СenturyFromYear(1705));
+            Assert.AreEqual(19, Kata.СenturyFromYear(1900));
+            Assert.AreEqual(17, Kata.СenturyFromYear(1601));
+            Assert.AreEqual(20, Kata.СenturyFromYear(2000));
+        }
+        [Test]
+        public void Test00001()
+        {
+            var num = new int[] { 2, 3, 9 };
+            var newNum = new int[] { 2, 4, 0 };
+            Assert.AreEqual(newNum, Kata.UpArray(num));
+        }
 
         [Test]
-        public static void StringTest6()
+        public void Test00002()
         {
-            Assert.AreEqual("Just gniddik ereht is llits one more", Kata.SpinWords("Just kidding there is still one more"));
+            var num = new int[] { 4, 3, 2, 5 };
+            var newNum = new int[] { 4, 3, 2, 6 };
+            Assert.AreEqual(newNum, Kata.UpArray(num));
+        }
+        [Test]
+        public void BasicTestsReverse()
+        {
+            Assert.AreEqual("nahsirk", Kata.ReverseLetter("krishan"));
+            Assert.AreEqual("nortlu", Kata.ReverseLetter("ultron"));
+            Assert.AreEqual("cba", Kata.ReverseLetter("abc"));
+            Assert.AreEqual("nahsirk", Kata.ReverseLetter("krishan"));
+        }
+        [Test]
+        public void ShouldRemoveAllVowels()
+        {
+            Assert.AreEqual("Ths wbst s fr lsrs LL!", Kata.Disemvowel("This website is for losers LOL!"));
+        }
+        [Test]
+        public void SampleTest1()
+        {
+            Assert.AreEqual(true, Kata.ValidParentheses("()"));
+        }
+
+        [Test]
+        public void SampleTest2()
+        {
+            Assert.AreEqual(false, Kata.ValidParentheses(")(((("));
+        }
+        [Test]
+        public void Sorrisos()
+        {
+            Assert.AreEqual(4, Kata.CountSmileys(new string[] { ":D", ":~)", ";~D", ":)" }));
+            Assert.AreEqual(2, Kata.CountSmileys(new string[] { ":)", ":(", ":D", ":O", ":;" }));
+            Assert.AreEqual(1, Kata.CountSmileys(new string[] { ";]", ":[", ";*", ":$", ";-D" }));
+            Assert.AreEqual(0, Kata.CountSmileys(new string[] { ";", ")", ";*", ":$", "8-D" }));
+        }
+        private static void Testing(string actual, string expected)
+        {
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public static void Letras()
+        {
+            Testing(Kata.Accum("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
+            Testing(Kata.Accum("NyffsGeyylB"), "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
+            Testing(Kata.Accum("MjtkuBovqrU"), "M-Jj-Ttt-" +
+                "Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu");
+            Testing(Kata.Accum("EvidjUnokmM"), "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm");
+            Testing(Kata.Accum("HbideVbxncC"), "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc");
+        }
+        [Test]
+        public static void Test()
+        {
+            string s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+            Assert.AreEqual("3/56", Kata.PrinterError(s));
+        }
+        [Test, Description("It should return correct text")]
+        public void Likes()
+        {
+            Assert.AreEqual("no one likes this", Kata.Likes(new string[0]));
+            Assert.AreEqual("Peter likes this", Kata.Likes(new string[] { "Peter" }));
+            Assert.AreEqual("Jacob and Alex like this", Kata.Likes(new string[] { "Jacob", "Alex" }));
+            Assert.AreEqual("Max, John and Mark like this", Kata.Likes(new string[] { "Max", "John", "Mark" }));
+            Assert.AreEqual("Alex, Jacob and 2 others like this", Kata.Likes(new string[] { "Alex", "Jacob", "Mark", "Max" }));
+        }
+        [TestCase]
+        public void BasicTest1()
+        {
+            List<string> result = new List<string> { "Hello", "hEllo", "heLlo", "helLo", "hellO" };
+            Assert.AreEqual(result, Kata.Wave("hello"), "it should return '" + result + "'");
+        }
+        [TestCase]
+        public void BasicTest2()
+        {
+            List<string> result = new List<string> { "Codewars", "cOdewars", "coDewars", "codEwars", "codeWars", "codewArs", "codewaRs", "codewarS" };
+            Assert.AreEqual(result, Kata.Wave("codewars"), "it should return '" + result + "'");
+        }
+
+        [TestCase]
+        public void BasicTest3()
+        {
+            List<string> result = new List<string> { };
+            Assert.AreEqual(result, Kata.Wave(""), "it should return '" + result + "'");
+        }
+
+        [TestCase]
+        public void BasicTest4()
+        {
+            List<string> result = new List<string> { "Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS" };
+            Assert.AreEqual(result, Kata.Wave("two words"), "it should return '" + result + "'");
+        }
+
+        [TestCase]
+        public void BasicTest5()
+        {
+            List<string> result = new List<string> { " Gap ", " gAp ", " gaP " };
+            Assert.AreEqual(result, Kata.Wave(" gap "), "it should return '" + result + "'");
         }
     }
 }
